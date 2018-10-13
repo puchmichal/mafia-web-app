@@ -1,0 +1,14 @@
+<html>
+    <head>
+      {% if room %}
+      <title>{{ room }} - Players </title>
+      {% else %}
+      <title>Welcome to new game</title>
+      {% endif %}
+    </head>
+    <body>
+        <div><a href="/index">Go back to main menu</a></div>
+        <hr>
+        {% block content %}{% endblock %}
+    </body>
+</html>

@@ -1,0 +1,8 @@
+{% extends "room_preview.html" %}
+
+{% block content %}
+    <h1>Welcome to room, {{ room.name }}!</h1>
+    {% for player in players %}
+    <div><p>{{ player.username }}  <b>{{ player.host }}</b></p></div>
+    {% endfor %}
+{% endblock %}
