@@ -1,8 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
 <html>
     <head>
         <title>Your class - Mafia the Game</title>
     </head>
     <body>
-        <h1>You are a  {{user.class}}!</h1>
+        {% with message = get_flashed_messages() %}
+        <h1>{{ message[0] }}, you are a  {{user.class}}!</h1>
+        {% endwith %}
     </body>
 </html>
+{% endblock %}
