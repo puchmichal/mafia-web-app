@@ -1,5 +1,6 @@
 Flask
 gunicorn
 wtforms
+flask_wtf
 flask_sqlalchemy
 flask_migrate
