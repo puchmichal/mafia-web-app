@@ -3,7 +3,8 @@ from app import db
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(64), index=True, unique=False)
-    room_in =
+    room_in = db.Column(db.Integer, index=True)
+    is_host = db.Column(db.Boolean, index=True)
 
     def __repr__(self):
         return '<User {}>'.format(self.username)
