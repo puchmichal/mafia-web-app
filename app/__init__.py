@@ -11,5 +11,3 @@ migrate = Migrate(app, db)
 
 from app import routes, models
 
-from subprocess import call
-call(["flask", "db", "init"])
