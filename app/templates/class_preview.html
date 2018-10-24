@@ -7,7 +7,7 @@
     </head>
     <body>
         {% with message = get_flashed_messages() %}
-        <h1>{{ message[0] }}, you are a  {{user.class}}!</h1>
+        <h1>{{ current_user.username }}, you are a  {{user.class}}!</h1>
         {% endwith %}
     </body>
 </html>

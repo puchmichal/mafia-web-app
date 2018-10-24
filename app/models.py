@@ -1,8 +1,10 @@
 from app import db
 from datetime import datetime
+from flask_login import UserMixin
+from app import login
 
 
-class User(db.Model):
+class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(64), index=True, unique=True)
     room_id = db.Column(db.Integer, db.ForeignKey('room.id'))
@@ -22,3 +24,6 @@ class Room(db.Model):
     def __repr__(self):
         return '<Room with name {} has user {} as a host>'.format(self.room_name, self.host_id)
 
+@login.user_loader
+def load_user(id):
+    return User.query.get(int(id))
