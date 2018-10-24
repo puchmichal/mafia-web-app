@@ -6,9 +6,10 @@
         <title>Your class - Mafia the Game</title>
     </head>
     <body>
-        {% with message = get_flashed_messages() %}
         <h1>{{ current_user.username }}, you are a  {{user.class}}!</h1>
-        {% endwith %}
+        {% if current_user.username == "Anetka" %}
+        <h1> Anetka jest zajebista <3 </h1>
+        {% endif %}
     </body>
 </html>
 {% endblock %}
