@@ -6,6 +6,9 @@
 *.exe
 *.o
 *.so
+*.db
+.idea
+migrations
 .env
 
 # Packages #
