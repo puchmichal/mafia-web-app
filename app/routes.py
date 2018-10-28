@@ -34,6 +34,21 @@ def login():
         return redirect(url_for('index'))
     return render_template('login.html', title='Sign In', form=form)
 
+# @app.route('/roomlogin', methods=['GET', 'POST'])
+# def login():
+#     if current_user.is_authenticated:
+#         return redirect(url_for('index'))
+#     form = LoginForm()
+#     if form.validate_on_submit():
+#         user = User.query.filter_by(username=form.username.data).first()
+#         if user is None:
+#             user = User(username=form.username.data, is_host=False)
+#             db.session.add(user)
+#             db.session.commit()
+#         login_user(user)
+#         return redirect(url_for('index'))
+#     return render_template('login.html', title='Sign In', form=form)
+
 @app.route('/logout')
 def logout():
     logout_user()
