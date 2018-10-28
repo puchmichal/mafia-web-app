@@ -6,10 +6,22 @@
         <title>Your class - Mafia the Game</title>
     </head>
     <body>
+        <br>
+        {% if user.class == "Citizen" %}
+        <img src="https://image.ibb.co/kG22iA/Citizen.jpg" alt="Citizen" border="0">
+        {% endif %}
+        {% if user.class == "Gangster" %}
+        <img src="https://image.ibb.co/n5qoOA/Gangster.jpg" alt="Gangster" border="0">
+        {% endif %}
+        {% if user.class == "Policeman" %}
+        <img src="https://image.ibb.co/bHSDqq/Policeman.jpg" alt="Policeman" border="0">
+        {% endif %}
         <h1>{{ current_user.username }}, you are a  {{user.class}}!</h1>
         {% if current_user.username == "Anetka" %}
+        <br>
         <h1> Anetka jest zajebista <3 </h1>
         {% endif %}
     </body>
 </html>
 {% endblock %}
+
