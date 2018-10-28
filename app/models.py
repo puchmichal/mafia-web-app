@@ -9,12 +9,12 @@ class User(UserMixin, db.Model):
     username = db.Column(db.String(64), index=True, unique=True)
     room_id = db.Column(db.Integer, db.ForeignKey('room.id'))
     is_host = db.Column(db.Boolean)
-
+    user_class = db.Column(db.String(15))
 
     def __repr__(self):
         return '<User {}>'.format(self.username)
 
-class Room(db.Model):
+class Room(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     room_name = db.Column(db.String(4), index=True, unique=True)
     host_id = db.Column(db.Integer)
